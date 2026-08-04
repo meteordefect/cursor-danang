@@ -15,7 +15,13 @@ const Partners: React.FC = () => {
 	return (
 		<section className="mb-10">
 			<h3 className="cursor-eyebrow mb-4">{t('footer.hostingPartners')}</h3>
-			<div className="grid grid-cols-2 border-l border-t border-cursor-border sm:grid-cols-3 lg:grid-cols-5">
+			<div
+				className={`grid border-l border-t border-cursor-border ${
+					partners.length <= 2
+						? 'max-w-md grid-cols-2'
+						: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'
+				}`}
+			>
 				{partners.map((partner) => (
 					<a
 						key={partner.name}
