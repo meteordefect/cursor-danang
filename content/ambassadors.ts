@@ -10,4 +10,13 @@ export const ambassadors: Ambassador[] = [
 			linkedin: 'https://www.linkedin.com/in/kvx/',
 		},
 	},
+	{
+		name: 'Johnny Tran',
+		role: 'Co-organizer · Da Nang',
+		photo: '/images/ambassadors/johnny-tran.webp',
+		links: {
+			x: 'https://x.com/MekongCalm',
+			linkedin: 'https://www.linkedin.com/in/mrnu/',
+		},
+	},
 ];
