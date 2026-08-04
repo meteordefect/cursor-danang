@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { recapsBySlug } from '@/content/recaps';
 import { defaultSlideDeck } from '@/modules/slides/content/index';
 
+export const dynamic = 'force-static';
+
 const BASE_URL =
 	process.env.NEXT_PUBLIC_SITE_URL ||
 	(process.env.VERCEL_PROJECT_PRODUCTION_URL

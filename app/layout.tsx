@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { headers } from 'next/headers';
 import { Analytics } from '@vercel/analytics/react';
 import Providers from '@/components/Providers';
 import { siteConfig } from '@/content/site.config';
@@ -45,15 +44,12 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-	const headersList = await headers();
-	const nonce = headersList.get('x-nonce') ?? '';
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang={siteConfig.defaultLocale}>
 			<body className="antialiased">
 				<Providers>{children}</Providers>
-				<Analytics {...({ nonce } as React.ComponentProps<typeof Analytics>)} />
+				<Analytics />
 			</body>
 		</html>
 	);

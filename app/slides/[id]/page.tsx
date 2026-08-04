@@ -7,7 +7,7 @@ interface SlidePageProps {
 	params: Promise<{ id: string }>;
 }
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 export function generateStaticParams() {
 	// Slide 1 lives at /slides — only prebuild 2…N
