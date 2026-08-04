@@ -4,7 +4,7 @@ export const siteConfig = {
 	communityNameLocal: 'Đà Nẵng',
 	city: 'Da Nang',
 	country: 'Vietnam',
-	lumaUrl: 'https://luma.com/cursor-danang',
+	lumaUrl: 'https://luma.com/cursor-da-nang-vietnam',
 	lumaCalendarEmbedUrl: '',
 	cursorCommunityUrl: 'https://cursor.com/community',
 	defaultLocale: 'en',
