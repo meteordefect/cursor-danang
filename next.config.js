@@ -59,3 +59,8 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+// OpenNext Cloudflare local bindings during `next dev`
+const { initOpenNextCloudflareForDev } = require('@opennextjs/cloudflare');
+initOpenNextCloudflareForDev();
+

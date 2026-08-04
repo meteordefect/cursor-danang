@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function proxy(request: NextRequest) {
+// Edge middleware (required for OpenNext/Cloudflare). Logic matches the former proxy.ts CSP nonce flow.
+export function middleware(request: NextRequest) {
 	const nonce = crypto.randomUUID();
 
 	const csp = [
