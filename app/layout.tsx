@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import Providers from '@/components/Providers';
 import { siteConfig } from '@/content/site.config';
 import './globals.css';
+
+const GA_MEASUREMENT_ID = 'G-Y2ET291P27';
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
 const title = siteConfig.communityName;
@@ -48,6 +51,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang={siteConfig.defaultLocale}>
 			<body className="antialiased">
+				<Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+				<Script id="google-analytics" strategy="afterInteractive">
+					{`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+				</Script>
 				<Providers>{children}</Providers>
 				<Analytics />
 			</body>
