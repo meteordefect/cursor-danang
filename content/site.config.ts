@@ -4,8 +4,7 @@ export const siteConfig = {
 	communityNameLocal: 'Đà Nẵng',
 	city: 'Da Nang',
 	country: 'Vietnam',
-	// REPLACE: Point at your real Luma community / calendar once ready.
-	lumaUrl: 'https://lu.ma/cursor-danang',
+	lumaUrl: 'https://luma.com/cursor-danang',
 	lumaCalendarEmbedUrl: '',
 	cursorCommunityUrl: 'https://cursor.com/community',
 	defaultLocale: 'en',

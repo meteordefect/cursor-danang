@@ -1,31 +1,32 @@
 import { CursorEvent } from '@/lib/types';
 
-// REPLACE: Replace all sample events, locations, and Luma URLs with real community events.
 export const events: CursorEvent[] = [
 	{
-		id: 'cafe-cursor-example-1',
-		title: 'Cafe Cursor YourCity',
-		date: '2026-03-21',
-		displayDate: 'March 21, 2026',
-		location: 'Your City, YourCountry',
-		lumaUrl: 'https://lu.ma/example-event-1',
+		id: 'cursor-danang-nick-miller',
+		title: 'Cursor Da Nang Meetup: With Nick Miller From Cursor',
+		date: '2026-08-05',
+		displayDate: 'August 5, 2026',
+		location: 'The Local Beans, 186 Phan Châu Trinh, Hải Châu, Da Nang',
+		lumaUrl: 'https://luma.com/cursor-fr4s',
 		status: 'upcoming',
 	},
 	{
-		id: 'cursor-seminar-yourcity',
-		title: 'Cursor Seminar YourCity',
-		date: '2026-02-14',
-		displayDate: 'February 14, 2026',
-		attendees: 38,
-		location: 'Your City, YourCountry',
-		recapPath: '/recaps/example-event',
-		thumbnail: '/images/events/placeholder-01.jpg',
-		galleryImages: ['/images/events/placeholder-02.jpg', '/images/events/placeholder-04.jpg'],
-		host: {
-			name: 'Host Venue',
-			logo: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=200&auto=format&fit=crop',
-		},
-		status: 'past',
+		id: 'ai-meetup-frontier-club-4',
+		title: 'AI Meetup By Frontier Club',
+		date: '2026-08-08',
+		displayDate: 'August 8, 2026',
+		location: 'Da Nang, Vietnam',
+		lumaUrl: 'https://luma.com/v09x4904',
+		status: 'upcoming',
+	},
+	{
+		id: 'cafe-cursor-danang',
+		title: 'Cafe Cursor Da Nang',
+		date: '2026-08-22',
+		displayDate: 'August 22, 2026',
+		location: 'Da Nang, Vietnam',
+		lumaUrl: 'https://luma.com/cursor-ii7j',
+		status: 'upcoming',
 	},
 ];
 
