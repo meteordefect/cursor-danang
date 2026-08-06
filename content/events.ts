@@ -8,7 +8,9 @@ export const events: CursorEvent[] = [
 		displayDate: 'August 5, 2026',
 		location: 'The Local Beans, 186 Phan Châu Trinh, Hải Châu, Da Nang',
 		lumaUrl: 'https://luma.com/cursor-fr4s',
-		status: 'upcoming',
+		status: 'past',
+		thumbnail: '/images/events/cursor-danang-nick-miller/49.webp',
+		recapPath: '/recaps/cursor-danang-nick-miller',
 	},
 	{
 		id: 'ai-meetup-frontier-club-4',
