@@ -36,24 +36,25 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, embedded = false })
 				</div>
 			</div>
 
-			<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+			<div className="columns-2 gap-2 md:columns-3 [&>*]:mb-2">
 				{photos.map((photo, index) => (
 					<button
 						key={`${photo.src}-${index}`}
 						type="button"
-						className="relative aspect-square overflow-hidden rounded-sm border border-cursor-border bg-cursor-bg-dark text-left"
+						className="group relative mb-2 block w-full break-inside-avoid overflow-hidden rounded-sm border border-cursor-border bg-cursor-bg-dark text-left"
 						onClick={() => {
 							setCurrentIndex(index);
 							setIsFullscreen(true);
 						}}
 						aria-label={t('recap.openPhoto', { index: String(index + 1) })}
 					>
-						<Image
+						{/* Native img keeps intrinsic height for masonry columns (next/image fill needs a fixed box). */}
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img
 							src={photo.src}
 							alt={photo.alt}
-							fill
-							className="object-cover"
-							sizes="(max-width: 768px) 50vw, 33vw"
+							loading="lazy"
+							className="h-auto w-full transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.02]"
 						/>
 					</button>
 				))}

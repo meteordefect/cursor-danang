@@ -86,7 +86,7 @@ export default async function RecapPage({ params }: RecapPageProps) {
 			{jsonLd && <JsonLd data={jsonLd} />}
 			<Navbar />
 			<MarketingGrid className="py-12 md:py-20">
-				<MarketingColumn width="reading">
+				<MarketingColumn width="wide">
 					<RecapBackLink />
 					<EventRecap recap={recap} />
 				</MarketingColumn>
