@@ -4,7 +4,7 @@ import { GalleryPhoto } from '@/lib/types';
 // Group shot first; remaining files in numeric order.
 export const cursorDanangNickMillerPhotos: GalleryPhoto[] = [
 	{
-		src: '/images/events/cursor-danang-nick-miller/49.webp',
+		src: '/images/events/cursor-danang-nick-miller/group.webp',
 		alt: 'Full group photo of attendees at the Cursor Da Nang Meetup with Nick Miller at The Local Beans',
 	},
 	{

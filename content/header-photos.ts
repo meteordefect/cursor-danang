@@ -4,8 +4,8 @@ import { BentoImage } from '@/lib/types';
 // images shuffle daily into those fixed slots on the server.
 export const headerPhotoPool: BentoImage[] = [
 	{
-		src: '/images/events/cursor-danang-nick-miller/36.webp',
-		alt: 'Attendees gathered for a group photo at the Cursor Da Nang Meetup at The Local Beans',
+		src: '/images/events/cursor-danang-nick-miller/group.webp',
+		alt: 'Full group photo from the Cursor Da Nang Meetup with Nick Miller at The Local Beans',
 	},
 	{
 		src: '/images/events/cursor-danang-nick-miller/20.webp',

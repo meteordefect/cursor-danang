@@ -9,7 +9,7 @@ export const events: CursorEvent[] = [
 		location: 'The Local Beans, 186 Phan Châu Trinh, Hải Châu, Da Nang',
 		lumaUrl: 'https://luma.com/cursor-fr4s',
 		status: 'past',
-		thumbnail: '/images/events/cursor-danang-nick-miller/49.webp',
+		thumbnail: '/images/events/cursor-danang-nick-miller/group.webp',
 		recapPath: '/recaps/cursor-danang-nick-miller',
 	},
 	{

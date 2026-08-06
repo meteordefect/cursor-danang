@@ -5,7 +5,7 @@ import { siteConfig } from '@/content/site.config';
 import { assignHeroPhotos, dailyBentoSeed } from '@/lib/bento-assign';
 
 /** Prefer this group shot in the large bottom-center desktop slot. */
-const FEATURED_GROUP_SRC = '/images/events/cursor-danang-nick-miller/36.webp';
+const FEATURED_GROUP_SRC = '/images/events/cursor-danang-nick-miller/group.webp';
 
 export default function HeroHeaderServer() {
 	const seed = dailyBentoSeed(siteConfig.communityName);
