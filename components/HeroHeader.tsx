@@ -27,12 +27,12 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({ photos }) => {
 				/>
 			</div>
 
-			{/* Opaque panel over the top-left bento slot: full width × half height on mobile, half × half on desktop */}
+			{/* Compact glass panel — hugs copy so the bento photos stay visible behind it */}
 			<div className="pointer-events-none absolute inset-0 z-10">
-				<div className="pointer-events-auto absolute left-0 top-0 h-1/2 w-full p-1 md:w-1/2 md:p-1.5">
-					<div className="flex h-full flex-col justify-end rounded-2xl border border-cursor-border bg-cursor-surface p-6 md:p-8 lg:p-10">
-						<h1 className="cursor-display max-w-[18ch] text-cursor-text">{t('home.heroHeading')}</h1>
-						<div className="mt-7">
+				<div className="pointer-events-auto absolute left-0 top-0 max-w-xl p-3 md:p-5 lg:p-6">
+					<div className="cursor-on-image rounded-2xl border border-white/15 bg-black/40 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-md md:p-7">
+						<h1 className="cursor-display max-w-[14ch] text-cursor-text">{t('home.heroHeading')}</h1>
+						<div className="mt-6">
 							<Button href="#events" variant="primary" size="md">
 								{t('home.exploreEvents')}
 								<span aria-hidden="true">→</span>
