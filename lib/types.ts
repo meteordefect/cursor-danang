@@ -84,6 +84,7 @@ export interface RecapPhotoCredit {
 export interface RecapSpeaker {
 	name: string;
 	topic: string;
+	topicLocal?: string;
 	photo?: string;
 	url?: string;
 }
@@ -108,9 +109,12 @@ export interface RecapResource {
 export interface RecapData {
 	slug: string;
 	title: string;
+	titleLocal?: string;
 	date: string;
+	dateLocal?: string;
 	attendees?: number;
 	summary: string[];
+	summaryLocal?: string[];
 	host?: { name: string; logo: string; url?: string };
 	speakers?: RecapSpeaker[];
 	projects?: RecapProject[];

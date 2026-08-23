@@ -18,7 +18,13 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 		<section className="mb-8">
 			<div className="rounded-sm border border-cursor-border bg-cursor-surface p-6 md:p-8">
 				<h1 className="cursor-section-title mb-2 text-cursor-text">{recap.title}</h1>
-				<p className="text-cursor-text-muted text-sm mb-6">{recap.date}</p>
+				{recap.titleLocal && recap.titleLocal !== recap.title ? (
+					<p className="text-cursor-text-muted text-lg mb-2">{recap.titleLocal}</p>
+				) : null}
+				<p className="text-cursor-text-muted text-sm mb-6">
+					{recap.date}
+					{recap.dateLocal && recap.dateLocal !== recap.date ? ` · ${recap.dateLocal}` : ''}
+				</p>
 
 				{recap.host ? (
 					<div className="text-cursor-text-muted text-sm mb-6 flex items-center gap-2">
@@ -42,9 +48,16 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 				) : null}
 				<div className="text-cursor-text-muted text-sm leading-relaxed space-y-3">
 					{recap.summary.map((paragraph, index) => (
-						<p key={index}>{paragraph}</p>
+						<p key={`en-${index}`}>{paragraph}</p>
 					))}
 				</div>
+				{recap.summaryLocal && recap.summaryLocal.length > 0 ? (
+					<div className="text-cursor-text-muted text-sm leading-relaxed space-y-3 mt-6 pt-6 border-t border-cursor-border">
+						{recap.summaryLocal.map((paragraph, index) => (
+							<p key={`vi-${index}`}>{paragraph}</p>
+						))}
+					</div>
+				) : null}
 
 				{/* Speakers */}
 				{recap.speakers && recap.speakers.length > 0 ? (
@@ -78,6 +91,9 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 											<p className="text-cursor-text font-medium text-sm">{speaker.name}</p>
 										)}
 										<p className="text-cursor-text-muted text-xs mt-0.5">{speaker.topic}</p>
+										{speaker.topicLocal ? (
+											<p className="text-cursor-text-faint text-xs mt-0.5">{speaker.topicLocal}</p>
+										) : null}
 									</div>
 								</div>
 							))}
