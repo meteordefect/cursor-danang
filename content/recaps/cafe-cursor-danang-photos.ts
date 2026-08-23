@@ -8,10 +8,6 @@ export const cafeCursorDanangPhotos: GalleryPhoto[] = [
 		alt: 'Attendees seated with laptops during Cafe Cursor Da Nang at The PowerHouse',
 	},
 	{
-		src: '/images/events/cafe-cursor-danang/001.webp',
-		alt: 'Joe Bellissimo with Cursor Da Nang hosts at The PowerHouse',
-	},
-	{
 		src: '/images/events/cafe-cursor-danang/002.webp',
 		alt: 'Photo 002 from Cafe Cursor Da Nang at The PowerHouse',
 	},
@@ -62,10 +58,6 @@ export const cafeCursorDanangPhotos: GalleryPhoto[] = [
 	{
 		src: '/images/events/cafe-cursor-danang/015.webp',
 		alt: 'Photo 015 from Cafe Cursor Da Nang at The PowerHouse',
-	},
-	{
-		src: '/images/events/cafe-cursor-danang/016.webp',
-		alt: 'Photo 016 from Cafe Cursor Da Nang at The PowerHouse',
 	},
 	{
 		src: '/images/events/cafe-cursor-danang/017.webp',
