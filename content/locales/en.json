@@ -64,6 +64,8 @@
 		"galleryTitle": "Photos",
 		"gallerySubtitle": "{count} photos from the event",
 		"openPhoto": "Open photo {index}",
+		"downloadPhoto": "Download",
+		"downloadPhotoLabel": "Download photo {index}",
 		"closeGallery": "Close gallery",
 		"prevPhoto": "Previous photo",
 		"nextPhoto": "Next photo",

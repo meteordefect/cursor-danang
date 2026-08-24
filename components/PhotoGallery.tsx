@@ -3,13 +3,19 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Download, X } from 'lucide-react';
 import { GalleryPhoto } from '@/lib/types';
 import { useI18n } from '@/lib/i18n';
 
 interface PhotoGalleryProps {
 	photos: GalleryPhoto[];
 	embedded?: boolean;
+}
+
+function downloadName(src: string) {
+	const file = src.split('/').pop() || 'photo.webp';
+	const folder = src.split('/').slice(-2, -1)[0];
+	return folder ? `${folder}-${file}` : file;
 }
 
 const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, embedded = false }) => {
@@ -38,25 +44,37 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, embedded = false })
 
 			<div className="columns-2 gap-2 md:columns-3 [&>*]:mb-2">
 				{photos.map((photo, index) => (
-					<button
+					<div
 						key={`${photo.src}-${index}`}
-						type="button"
-						className="group relative mb-2 block w-full break-inside-avoid overflow-hidden rounded-sm border border-cursor-border bg-cursor-bg-dark text-left"
-						onClick={() => {
-							setCurrentIndex(index);
-							setIsFullscreen(true);
-						}}
-						aria-label={t('recap.openPhoto', { index: String(index + 1) })}
+						className="group relative mb-2 break-inside-avoid overflow-hidden rounded-sm border border-cursor-border bg-cursor-bg-dark"
 					>
-						{/* Native img keeps intrinsic height for masonry columns (next/image fill needs a fixed box). */}
-						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img
-							src={photo.src}
-							alt={photo.alt}
-							loading="lazy"
-							className="h-auto w-full transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.02]"
-						/>
-					</button>
+						<button
+							type="button"
+							className="block w-full text-left"
+							onClick={() => {
+								setCurrentIndex(index);
+								setIsFullscreen(true);
+							}}
+							aria-label={t('recap.openPhoto', { index: String(index + 1) })}
+						>
+							{/* Native img keeps intrinsic height for masonry columns (next/image fill needs a fixed box). */}
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img
+								src={photo.src}
+								alt={photo.alt}
+								loading="lazy"
+								className="h-auto w-full transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.02]"
+							/>
+						</button>
+						<a
+							href={photo.src}
+							download={downloadName(photo.src)}
+							className="absolute bottom-2 right-2 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-sm transition-colors hover:bg-black/75"
+							aria-label={t('recap.downloadPhotoLabel', { index: String(index + 1) })}
+						>
+							<Download className="h-4 w-4" />
+						</a>
+					</div>
 				))}
 			</div>
 
@@ -97,10 +115,18 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, embedded = false })
 								</AnimatePresence>
 							</div>
 
-							<div className="rounded-sm border border-cursor-border bg-cursor-bg p-4 text-center">
+							<div className="flex flex-wrap items-center justify-center gap-3 rounded-sm border border-cursor-border bg-cursor-bg p-4">
 								<p className="text-cursor-text font-medium">
 									{t('recap.photoLabel', { index: String(currentIndex + 1), total: String(photos.length) })}
 								</p>
+								<a
+									href={currentPhoto.src}
+									download={downloadName(currentPhoto.src)}
+									className="inline-flex items-center gap-1.5 rounded-full border border-cursor-border bg-cursor-surface px-3.5 py-1.5 text-sm text-cursor-text transition-colors hover:bg-cursor-surface-raised"
+								>
+									<Download className="h-4 w-4" />
+									{t('recap.downloadPhoto')}
+								</a>
 							</div>
 
 							{photos.length > 1 ? (
